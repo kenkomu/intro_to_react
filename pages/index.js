@@ -2,7 +2,7 @@ import Card from "@/components/card";
 import Navbar from "@/components/navbar";
 import axios from "axios";
 
-import { useState } from "
+// import { useState } from "
 
 
 export default function Home() {
