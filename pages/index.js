@@ -2,26 +2,34 @@ import Card from "@/components/card";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
+import { useEffect, useState } from "react";
 export default function Home() {
 
-  async function fetchName(){
-    await axios.get('/api/hello').then(res =>{
-      console.log(res);
+  async function getALLTransactions(){
+    await axios.get("/api/get-all-transactions").then(res =>{
+      console.log(res.data)
     })
   }
+
+  useEffect(() => {
+     
+  }, [])
   return (
     <>
      
      <Navbar />
-    
-    <button onClick={fetchName}>Get Name</button>
-    <div className="h-[100vh] flex flex-col gap-10 justify-center items-center pt-20">
-      <Card imageUrl="/komu.jpg" profileName="Komu" content="I started learning how to use next.js last week. I will be posting my progress this weekend."/>
-      <Card imageUrl="/img2.jpg" profileName="Pexel" content="Have a great week Coding Everyone"/>
-      <Card imageUrl="/azziad.jpeg" profileName="Azziad" content="Someday you'll look back and understand why it all happened the way it did."/>
+
+
+  
+    <main className="min-h-screen pt-16 flex flex-col items-center ">
+      <Card 
+        imageUrl="/komu.jpg"
+        profileName="Komu"
+        content="I started learning how to use next.js last week. I will be posting my progress this weekend."
+      />
       
       
-    </div>
+    </main>
      <Footer /> 
      
     </>
